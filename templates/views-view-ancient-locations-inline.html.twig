@@ -1,0 +1,15 @@
+{# STYLE: views-view-ancient-locations-inline.html.twig (STYLE OK) #}
+{{ attach_library('ancient_location_qr/qr_view_styles') }}
+<div class="al-list">
+  {% if title %}
+    <h3 class="al-list__title">{{ title }}</h3>
+  {% endif %}
+  {% for row in rows %}
+    <div{{ row.attributes.addClass('al-row') }}>
+      {{ row.content }}
+    </div>
+  {% else %}
+    <div class="al-empty">{{ 'No results.'|t }}</div>
+  {% endfor %}
+</div>
+

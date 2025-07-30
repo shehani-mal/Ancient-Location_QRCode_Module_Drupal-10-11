@@ -1,0 +1,50 @@
+/* Layout: inline Image | Title | QR  */
+.al-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* push QR to the far right */
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* Image column */
+.al-col.al-image img {
+  width: 350px;       /* fix width to align with QR visually */
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  object-fit: cover;  /* crops tall images nicely */
+}
+
+/* Title column */
+.al-col.al-title {
+  flex: 1;            /* let the title stretch between image and QR */
+  padding: 0 0.5rem;
+}
+.al-title__text {
+  margin: 0;
+  font-size: 1.5rem;  /* <h2> sizing; adjust if needed */
+  line-height: 1.3;
+}
+
+/* QR column — force 250x250 for all */
+.al-col.al-qr img {
+  width: 250px !important;
+  height: 250px !important;
+  display: block;
+  object-fit: contain;   /* keeps QR intact, no distortion */
+}
+
+/* Optional: stack on small screens */
+@media (max-width: 680px) {
+  .al-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .al-col.al-image img,
+  .al-col.al-qr img {
+    width: 350px;
+    height: 350px;
+  }
+}

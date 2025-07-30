@@ -1,0 +1,15 @@
+{# ROW: Image | Title | QR #}
+<div class="al-row">
+  <div class="al-col al-image">
+    {{ fields.field_image_of_place.content }}
+  </div>
+
+  <div class="al-col al-title">
+    <h2 class="al-title__text">{{ fields.title.content }}</h2>
+  </div>
+
+  <div class="al-col al-qr">
+    {# field_map_url is already using the QR Code Formatter, which outputs <img> #}
+    {{ fields.field_map_url.content }}
+  </div>
+</div>

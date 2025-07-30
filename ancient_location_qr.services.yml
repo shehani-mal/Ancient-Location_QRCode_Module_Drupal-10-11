@@ -1,0 +1,4 @@
+services:
+  ancient_location_qr.generator:
+    class: Drupal\ancient_location_qr\Service\QRCodeGenerator
+    arguments: ['@file_system']

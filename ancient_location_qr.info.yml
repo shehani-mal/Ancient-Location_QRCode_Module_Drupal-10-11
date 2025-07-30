@@ -1,0 +1,7 @@
+name: 'Ancient Location QR'
+type: module
+description: 'Generates QR codes for tourist place nodes linking to map URLs.'
+core_version_requirement: ^10 || ^11
+package: Custom
+dependencies:
+  - node
